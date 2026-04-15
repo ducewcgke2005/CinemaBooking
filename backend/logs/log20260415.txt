@@ -597,3 +597,77 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
 2026-04-15 01:06:39.240 +07:00 [INF] Executed endpoint 'CinemaBooking.controllers.MovieController.Test (backend)'
 2026-04-15 01:06:39.242 +07:00 [INF] HTTP GET /api/movie/test responded 200 in 163.3839 ms
 2026-04-15 01:06:39.245 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5097/api/movie/test - 200 null text/plain; charset=utf-8 247.41ms
+2026-04-15 14:17:41.877 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-15 14:17:41.984 +07:00 [INF] Now listening on: http://localhost:5097
+2026-04-15 14:17:41.986 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-15 14:17:41.987 +07:00 [INF] Hosting environment: Development
+2026-04-15 14:17:41.988 +07:00 [INF] Content root path: D:\CinemaBooking\backend
+2026-04-15 14:17:49.119 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5097/api/auth/login - application/json 55
+2026-04-15 14:17:49.143 +07:00 [WRN] Failed to determine the https port for redirect.
+2026-04-15 14:17:52.407 +07:00 [INF] Executing endpoint 'CinemaBooking.controllers.AuthController.Login (backend)'
+2026-04-15 14:17:52.433 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CinemaBooking.dtos.LoginRequest) on controller CinemaBooking.controllers.AuthController (backend).
+2026-04-15 14:17:53.634 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-15 14:17:53.650 +07:00 [INF] Executed action CinemaBooking.controllers.AuthController.Login (backend) in 1210.4605ms
+2026-04-15 14:17:53.654 +07:00 [INF] Executed endpoint 'CinemaBooking.controllers.AuthController.Login (backend)'
+2026-04-15 14:17:53.657 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 1250.9694 ms
+2026-04-15 14:17:53.663 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5097/api/auth/login - 200 null application/json; charset=utf-8 4545.8053ms
+2026-04-15 14:18:46.171 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5097/api/movie/test - null null
+2026-04-15 14:18:46.219 +07:00 [INF] Executing endpoint 'CinemaBooking.controllers.MovieController.Test (backend)'
+2026-04-15 14:18:46.222 +07:00 [INF] Route matched with {action = "Test", controller = "Movie"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Test() on controller CinemaBooking.controllers.MovieController (backend).
+2026-04-15 14:18:46.224 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-04-15 14:18:46.226 +07:00 [INF] Executed action CinemaBooking.controllers.MovieController.Test (backend) in 3.1602ms
+2026-04-15 14:18:46.227 +07:00 [INF] Executed endpoint 'CinemaBooking.controllers.MovieController.Test (backend)'
+2026-04-15 14:18:46.228 +07:00 [INF] HTTP GET /api/movie/test responded 200 in 8.4927 ms
+2026-04-15 14:18:46.229 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5097/api/movie/test - 200 null text/plain; charset=utf-8 58.7856ms
+2026-04-15 14:18:57.584 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5097/api/movie/test - null null
+2026-04-15 14:18:57.597 +07:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (admin)
+2026-04-15 14:18:57.600 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-04-15 14:18:57.602 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5097/api/movie/test - 401 0 null 17.3952ms
+2026-04-15 14:19:11.361 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5097/api/movie/list - null null
+2026-04-15 14:19:11.368 +07:00 [INF] Executing endpoint 'CinemaBooking.controllers.MovieController.Get (backend)'
+2026-04-15 14:19:11.373 +07:00 [INF] Route matched with {action = "Get", controller = "Movie"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller CinemaBooking.controllers.MovieController (backend).
+2026-04-15 14:19:11.391 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CinemaBooking.models.Movie, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-15 14:19:11.412 +07:00 [INF] Executed action CinemaBooking.controllers.MovieController.Get (backend) in 37.2206ms
+2026-04-15 14:19:11.413 +07:00 [INF] Executed endpoint 'CinemaBooking.controllers.MovieController.Get (backend)'
+2026-04-15 14:19:11.414 +07:00 [INF] HTTP GET /api/movie/list responded 200 in 45.7637 ms
+2026-04-15 14:19:11.415 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5097/api/movie/list - 200 null application/json; charset=utf-8 54.0995ms
+2026-04-15 15:38:28.348 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5097/api/movie/69de0ea52e6f98d3dd3741df - null null
+2026-04-15 15:38:28.375 +07:00 [INF] HTTP GET /api/movie/69de0ea52e6f98d3dd3741df responded 404 in 0.1414 ms
+2026-04-15 15:38:28.377 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5097/api/movie/69de0ea52e6f98d3dd3741df - 404 0 null 28.7225ms
+2026-04-15 15:38:28.380 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5097/api/movie/69de0ea52e6f98d3dd3741df, Response status code: 404
+2026-04-15 15:39:45.449 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5097/api/movie/test - null null
+2026-04-15 15:39:45.472 +07:00 [INF] Executing endpoint 'CinemaBooking.controllers.MovieController.Test (backend)'
+2026-04-15 15:39:45.474 +07:00 [INF] Route matched with {action = "Test", controller = "Movie"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Test() on controller CinemaBooking.controllers.MovieController (backend).
+2026-04-15 15:39:45.477 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-04-15 15:39:45.478 +07:00 [INF] Executed action CinemaBooking.controllers.MovieController.Test (backend) in 3.0157ms
+2026-04-15 15:39:45.479 +07:00 [INF] Executed endpoint 'CinemaBooking.controllers.MovieController.Test (backend)'
+2026-04-15 15:39:45.480 +07:00 [INF] HTTP GET /api/movie/test responded 200 in 7.2361 ms
+2026-04-15 15:39:45.480 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5097/api/movie/test - 200 null text/plain; charset=utf-8 31.2949ms
+2026-04-15 15:39:58.530 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5097/api/movie/69de0ea52e6f98d3dd3741df - null null
+2026-04-15 15:39:58.532 +07:00 [INF] HTTP GET /api/movie/69de0ea52e6f98d3dd3741df responded 404 in 0.0134 ms
+2026-04-15 15:39:58.534 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5097/api/movie/69de0ea52e6f98d3dd3741df - 404 0 null 3.6147ms
+2026-04-15 15:39:58.536 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5097/api/movie/69de0ea52e6f98d3dd3741df, Response status code: 404
+2026-04-15 15:40:59.560 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5097/api/movie/69de0ea52e6f98d3dd3741df - null null
+2026-04-15 15:40:59.561 +07:00 [INF] HTTP GET /api/movie/69de0ea52e6f98d3dd3741df responded 404 in 0.0079 ms
+2026-04-15 15:40:59.562 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5097/api/movie/69de0ea52e6f98d3dd3741df - 404 0 null 1.9174ms
+2026-04-15 15:40:59.564 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5097/api/movie/69de0ea52e6f98d3dd3741df, Response status code: 404
+2026-04-15 15:41:25.104 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5097/api/movie/detail/69de0ea52e6f98d3dd3741df - null null
+2026-04-15 15:41:25.106 +07:00 [INF] HTTP GET /api/movie/detail/69de0ea52e6f98d3dd3741df responded 404 in 0.0098 ms
+2026-04-15 15:41:25.107 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5097/api/movie/detail/69de0ea52e6f98d3dd3741df - 404 0 null 2.4663ms
+2026-04-15 15:41:25.108 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5097/api/movie/detail/69de0ea52e6f98d3dd3741df, Response status code: 404
+2026-04-15 15:41:53.469 +07:00 [INF] Application is shutting down...
+2026-04-15 15:42:20.697 +07:00 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-15 15:42:20.795 +07:00 [INF] Now listening on: http://localhost:5097
+2026-04-15 15:42:20.798 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-15 15:42:20.799 +07:00 [INF] Hosting environment: Development
+2026-04-15 15:42:20.799 +07:00 [INF] Content root path: D:\CinemaBooking\backend
+2026-04-15 15:42:32.842 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5097/api/movie/69de0ea52e6f98d3dd3741df - null null
+2026-04-15 15:42:32.869 +07:00 [WRN] Failed to determine the https port for redirect.
+2026-04-15 15:42:36.863 +07:00 [INF] Executing endpoint 'CinemaBooking.controllers.MovieController.GetById (backend)'
+2026-04-15 15:42:36.906 +07:00 [INF] Route matched with {action = "GetById", controller = "Movie"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.String) on controller CinemaBooking.controllers.MovieController (backend).
+2026-04-15 15:42:38.365 +07:00 [INF] Executing OkObjectResult, writing value of type 'CinemaBooking.models.Movie'.
+2026-04-15 15:42:38.382 +07:00 [INF] Executed action CinemaBooking.controllers.MovieController.GetById (backend) in 1471.8484ms
+2026-04-15 15:42:38.384 +07:00 [INF] Executed endpoint 'CinemaBooking.controllers.MovieController.GetById (backend)'
+2026-04-15 15:42:38.387 +07:00 [INF] HTTP GET /api/movie/69de0ea52e6f98d3dd3741df responded 200 in 1524.2042 ms
+2026-04-15 15:42:38.391 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5097/api/movie/69de0ea52e6f98d3dd3741df - 200 null application/json; charset=utf-8 5552.935ms

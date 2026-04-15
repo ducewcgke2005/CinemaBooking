@@ -16,5 +16,10 @@ namespace CinemaBooking.services
         {
             return _repo.GetAllAsync();
         }
+
+        public Task<Movie> GetById(string id)
+        {
+            return _repo.GetByIdAsync(id);
+        }
     }
 }

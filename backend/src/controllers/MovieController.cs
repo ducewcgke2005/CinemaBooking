@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace CinemaBooking.controllers
 {
+    [Authorize(Roles="admin")]
     [ApiController]
     [Route("api/[controller]")]
     public class MovieController : ControllerBase
@@ -15,7 +16,8 @@ namespace CinemaBooking.controllers
             _service = service;
         }
 
-        [HttpGet]
+        [AllowAnonymous]
+        [HttpGet("list")]
         public async Task<IActionResult> Get()
         {
             var movies = await _service.GetAll();
@@ -23,10 +25,21 @@ namespace CinemaBooking.controllers
         }
 
         [HttpGet("test")]
-        [Authorize]
         public IActionResult Test()
         {
             return Ok("Bạn đã vào được API có authorize");
         }
+
+        [AllowAnonymous]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(string id)
+        {
+            var movie = await _service.GetById(id);
+            if (movie == null)
+                return NotFound();
+
+            return Ok(movie);
+        }
+
     }
 }
