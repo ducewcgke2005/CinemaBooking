@@ -36,6 +36,8 @@ builder.Services.AddScoped<MovieService>();
 builder.Services.AddSingleton<UserRepository>();
 builder.Services.AddSingleton<AuthService>();
 builder.Services.AddSingleton<JwtService>();
+builder.Services.AddScoped<CinemaRepository>();
+builder.Services.AddScoped<CinemaService>();
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
