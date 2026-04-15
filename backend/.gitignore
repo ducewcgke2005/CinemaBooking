@@ -1,0 +1,23 @@
+# Build
+bin/
+obj/
+
+# Logs
+logs/
+*.log
+
+# Visual Studio
+.vs/
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+
+# Environment
+appsettings.Development.json
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
