@@ -37,7 +37,7 @@ namespace CinemaBooking.controllers
             return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         public async Task<IActionResult> Create([FromBody] CreateMovieDto dto)
         {
             var result = await _service.Create(dto);

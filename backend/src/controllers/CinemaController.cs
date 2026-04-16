@@ -1,6 +1,7 @@
 using CinemaBooking.services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using CinemaBooking.dto;
 
 namespace CinemaBooking.controllers
 {
@@ -33,6 +34,13 @@ namespace CinemaBooking.controllers
                 return NotFound();
 
             return Ok(cinema);
-        } 
+        }
+
+        [HttpPost("create")]
+        public async Task<IActionResult> Create([FromBody] CreateCinemaDto dto)
+        {
+            var cinema = await _service.Create(dto);
+            return Ok(cinema);
+        }
     }
 }

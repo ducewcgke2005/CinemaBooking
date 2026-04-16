@@ -1,5 +1,6 @@
 using CinemaBooking.models;
 using CinemaBooking.repositories;
+using CinemaBooking.dto;
 
 namespace CinemaBooking.services
 {
@@ -12,14 +13,55 @@ namespace CinemaBooking.services
             _repo = repo;
         }
 
-        public Task<List<Cinema>> GetAll()
+        public async Task<List<CinemaDto>> GetAll()
         {
-            return _repo.GetAllAsync();
+            var danhSach = await _repo.GetAllAsync();
+
+            return danhSach.Select(r => new CinemaDto
+            {
+                Id = r.Id,
+                Name = r.Name,
+                Location = r.Location,
+                Address = r.Address,
+                CreatedAt = r.CreatedAt
+            }).ToList();
         }
 
-        public Task<Cinema> GetById(string id)
+        public async Task<CinemaDto> GetById(string id)
         {
-            return _repo.GetByIdAsync(id);
+            var r = await _repo.GetByIdAsync(id);
+            if (r == null) return null;
+
+            return new CinemaDto
+            {
+                Id = r.Id,
+                Name = r.Name,
+                Location = r.Location,
+                Address = r.Address,
+                CreatedAt = r.CreatedAt
+            };
+        }
+
+        public async Task<CinemaDto> Create(CreateCinemaDto dto)
+        {
+            var cinema = new Cinema
+            {
+                Name = dto.Name,
+                Location = dto.Location,
+                Address = dto.Address,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            await _repo.CreateAsync(cinema);
+
+            return new CinemaDto
+            {
+                Id = cinema.Id,
+                Name = cinema.Name,
+                Location = cinema.Location,
+                Address = cinema.Address,
+                CreatedAt = cinema.CreatedAt
+            };
         }
     }
 }
