@@ -22,5 +22,10 @@ namespace CinemaBooking.repositories
         {
             return await _movies.Find(x => x.Id == id).FirstOrDefaultAsync();
         }
+
+        public async Task CreateAsync(Movie movie)
+        {
+            await _movies.InsertOneAsync(movie);
+        }
     }
 }

@@ -1,5 +1,6 @@
 using CinemaBooking.models;
 using CinemaBooking.repositories;
+using CinemaBooking.dto;
 
 namespace CinemaBooking.services
 {
@@ -12,14 +13,67 @@ namespace CinemaBooking.services
             _repo = repo;
         }
 
-        public Task<List<Movie>> GetAll()
+        public async Task<List<MovieDto>> GetAll()
         {
-            return _repo.GetAllAsync();
+            var movies = await _repo.GetAllAsync();
+
+            return movies.Select(m => new MovieDto
+            {
+                Id = m.Id,
+                Title = m.Title,
+                Duration = m.Duration,
+                Genre = m.Genre,
+                Poster = m.Poster,
+                ReleaseDate = m.ReleaseDate,
+                Status = m.Status
+            }).ToList();
         }
 
-        public Task<Movie> GetById(string id)
+        public async Task<MovieDto> GetById(string id)
         {
-            return _repo.GetByIdAsync(id);
+            var m = await _repo.GetByIdAsync(id);
+
+            if (m == null) return null;
+
+            return new MovieDto
+            {
+                Id = m.Id,
+                Title = m.Title,
+                Duration = m.Duration,
+                Genre = m.Genre,
+                Poster = m.Poster,
+                ReleaseDate = m.ReleaseDate,
+                Status = m.Status
+            };
+        }
+
+        public async Task<MovieDto> Create(CreateMovieDto dto)
+        {
+            var movie = new Movie
+            {
+                Title = dto.Title,
+                Description = dto.Description,
+                Duration = dto.Duration,
+                Genre = dto.Genre,
+                Poster = dto.Poster,
+                Trailer = dto.Trailer,
+                ReleaseDate = dto.ReleaseDate,
+                Status = "coming",
+                CreatedAt = DateTime.UtcNow
+            };
+
+            await _repo.CreateAsync(movie);
+
+            return new MovieDto
+            {
+                Id = movie.Id,
+                Title = movie.Title,
+                Duration = movie.Duration,
+                Genre = movie.Genre,
+                Poster = movie.Poster,
+                ReleaseDate = movie.ReleaseDate,
+                Status = movie.Status
+            };
         }
     }
 }

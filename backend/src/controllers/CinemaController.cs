@@ -33,6 +33,6 @@ namespace CinemaBooking.controllers
                 return NotFound();
 
             return Ok(cinema);
-        }
+        } 
     }
 }
