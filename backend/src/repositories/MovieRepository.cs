@@ -27,5 +27,15 @@ namespace CinemaBooking.repositories
         {
             await _movies.InsertOneAsync(movie);
         }
+
+        public async Task<bool> UpdateStatusAsync(string id, string status)
+        {
+            var filter = Builders<Movie>.Filter.Eq("_id", new ObjectId(id));
+            var update = Builders<Movie>.Update.Set(x => x.Status, status);
+
+            var result = await _movies.UpdateOneAsync(filter, update);
+
+            return result.ModifiedCount > 0;
+        }
     }
 }

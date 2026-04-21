@@ -43,5 +43,16 @@ namespace CinemaBooking.controllers
             var result = await _service.Create(dto);
             return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
         }
+
+        [HttpPatch("update-status/{id}")]
+        public async Task<IActionResult> UpdateStatus(string id, UpdateMovieStatusDto dto)
+        {
+            var movie = await _service.UpdateStatus(id, dto);
+
+            if (movie == null)
+                return NotFound();
+
+            return Ok(movie);
+        }
     }
 }

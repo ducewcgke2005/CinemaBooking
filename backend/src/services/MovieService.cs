@@ -75,5 +75,27 @@ namespace CinemaBooking.services
                 Status = movie.Status
             };
         }
+
+        public async Task<MovieDto> UpdateStatus(string id, UpdateMovieStatusDto dto)
+        {
+            var movie = await _repo.GetByIdAsync(id);
+            if (movie == null) return null;
+
+            var updated = await _repo.UpdateStatusAsync(id, dto.Status);
+            if (!updated) return null;
+
+            movie.Status = dto.Status;
+
+            return new MovieDto
+            {
+                Id = movie.Id,
+                Title = movie.Title,
+                Duration = movie.Duration,
+                Genre = movie.Genre,
+                Poster = movie.Poster,
+                ReleaseDate = movie.ReleaseDate,
+                Status = movie.Status
+            };
+        }
     }
 }
